@@ -9,6 +9,11 @@ body {
     margin: 0;
 }
 
+canvas {
+    margin: auto;
+    display: block;
+}
+
 #launchPadContainer {
     width: 100%;
     height: 100%;
@@ -24,4 +29,5 @@ body {
     right: 50%;
     margin-top: -.5em;
     margin-right: -2.75em;
+    z-index: inherit;
 }
