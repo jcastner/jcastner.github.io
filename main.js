@@ -69,7 +69,7 @@ function animationLoop(timestamp) {
     renderStarField();
 
     var fps = Math.round(1/secondsPassed);
-    launchPadCanvasContext.fillText("FPS: " + fps, 10, 30);
+    // launchPadCanvasContext.fillText("FPS: " + fps, 10, 30);
 
     window.requestAnimationFrame(animationLoop);
 }
