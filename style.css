@@ -26,8 +26,8 @@ canvas {
     font-size: 2.5em;
     position: absolute;
     top: 50%;
-    right: 40%;
     margin-top: -.5em;
     margin-right: -2.75em;
     z-index: inherit;
+    opacity: 0;
 }
