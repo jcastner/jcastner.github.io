@@ -41,7 +41,7 @@ function updateStarField() {
         if(stars[i].y < -3) // Remove stars from the array that are not on the screen
             stars.splice(i, 1);
 
-        if(Math.random() > 0.9999000000) { // Randomly generate new stars at the bottom of the screen every once in a while, probably a better way to do this
+        if(Math.random() > 0.999800000) { // Randomly generate new stars at the bottom of the screen every once in a while, probably a better way to do this
             var s = new Star(Math.floor((Math.random() * (document.body.clientWidth-3)) + 3), document.body.clientHeight + 3);
             stars.push(s);
         }
@@ -79,7 +79,7 @@ $(function() { // Page load
     launchPadCanvas.width = document.body.clientWidth;
     launchPadCanvas.height = document.body.clientHeight;
     $('#welcomeBanner').animate({'opacity': '.96'}, 5000);
-    $('#welcomeBanner').css('left', ((document.body.clientWidth / 2) - ($('#welcomeBanner').width() / 2)).toString() + 'px');
+    //$('#welcomeBanner').css('left', ((document.body.clientWidth / 2) - ($('#welcomeBanner').width() / 2)).toString() + 'px');
 
     window.requestAnimationFrame(animationLoop);
 
