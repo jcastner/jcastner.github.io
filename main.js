@@ -38,11 +38,11 @@ function updateStarField() {
     for (var i = 0; i < stars.length; i++) { // Loop through stars and sub y to make moving up animation
         stars[i].y -= (stars[i].velocity * secondsPassed*2);
 
-        if(stars[i].y < 0) // Remove stars from the array that are not on the screen
+        if(stars[i].y < -3) // Remove stars from the array that are not on the screen
             stars.splice(i, 1);
 
-        if(Math.random() > 0.9999) { // Randomly generate new stars at the bottom of the screen every once in a while
-            var s = new Star(Math.floor((Math.random() * document.body.clientWidth) + 1), document.body.clientHeight);
+        if(Math.random() > 0.999800000) { // Randomly generate new stars at the bottom of the screen every once in a while, probably a better way to do this
+            var s = new Star(Math.floor((Math.random() * (document.body.clientWidth-3)) + 3), document.body.clientHeight + 3);
             stars.push(s);
         }
     }
@@ -69,7 +69,7 @@ function animationLoop(timestamp) {
     renderStarField();
 
     var fps = Math.round(1/secondsPassed);
-    launchPadCanvasContext.fillText("FPS: " + fps, 10, 30);
+    // launchPadCanvasContext.fillText("FPS: " + fps, 10, 30);
 
     window.requestAnimationFrame(animationLoop);
 }
@@ -78,7 +78,8 @@ $(function() { // Page load
     // Initial setup stuff
     launchPadCanvas.width = document.body.clientWidth;
     launchPadCanvas.height = document.body.clientHeight;
-    $('#welcomeBanner').css('opacity', '0.0').animate({'opacity': '.96'}, 5000);
+    $('#welcomeBanner').animate({'opacity': '.96'}, 5000);
+    //$('#welcomeBanner').css('left', ((document.body.clientWidth / 2) - ($('#welcomeBanner').width() / 2)).toString() + 'px');
 
     window.requestAnimationFrame(animationLoop);
 
@@ -87,8 +88,8 @@ $(function() { // Page load
         launchPadCanvas.width = document.body.clientWidth;
         launchPadCanvas.height = document.body.clientHeight;
 
-        // stars = generateStarField(launchPadCanvasContext);
-        // stopAnimation();
-        // startAnimation();
+        stars = generateStarField(launchPadCanvasContext);
+
+        $('#welcomeBanner').css('left', ((document.body.clientWidth / 2) - ($('#welcomeBanner').width() / 2)).toString() + 'px');
     });
 });
