@@ -90,6 +90,6 @@ $(function() { // Page load
 
         stars = generateStarField(launchPadCanvasContext);
 
-        $('#welcomeBanner').css('left', ((document.body.clientWidth / 2) - ($('#welcomeBanner').width() / 2)).toString() + 'px');
+        //$('#welcomeBanner').css('left', ((document.body.clientWidth / 2) - ($('#welcomeBanner').width() / 2)).toString() + 'px');
     });
 });

@@ -27,11 +27,21 @@ canvas {
     position: absolute;
     top: 50%;
     margin-top: -.5em;
-    z-index: inherit;
     opacity: 0;
     width: 100%;
 }
 
 #welcomeBanner > p {
+    text-align: center;
+}
+
+#workBanner {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#workBannerText {
+    font-size: 1.5em;
     text-align: center;
 }
