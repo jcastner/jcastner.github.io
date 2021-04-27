@@ -3,6 +3,12 @@
     src: url(Assets/a-astro-space-font/AstroSpace-0Wl3o.otf);
 }
 
+@font-face {
+    font-family: AgeLast;
+    src: url(Assets/agelast-font/Agelast-mLlAm.otf);
+}
+
+/* Everything mobile first */
 body {
     background-color: black;
     color: rgba(248, 247, 247, 0.822);
@@ -23,7 +29,7 @@ canvas {
 #welcomeBanner {
     font-family: SpaceQuest;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 1.5em;
     position: absolute;
     top: 50%;
     margin-top: -.5em;
@@ -31,17 +37,25 @@ canvas {
     width: 100%;
 }
 
-#welcomeBanner > p {
+#welcomeBannerText {
     text-align: center;
 }
 
 #workBanner {
-    margin: 0;
-    padding: 0;
+    padding: 10em 0 10em 0;
     width: 100%;
 }
 
 #workBannerText {
+    font-family: AgeLast;
     font-size: 1.5em;
     text-align: center;
+}
+
+/* Screens 600px and up */
+@media (min-width: 600px) {
+    #welcomeBanner {
+        font-size: 5em;
+        top: 40%;
+    }
 }
